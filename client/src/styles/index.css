@@ -1,0 +1,14 @@
+.signIn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+
+}
+.join {
+    display: flex;
+    flex-direction: row;
+    
+    cursor: pointer;
+}
+
+

@@ -1,0 +1,459 @@
+/* client/src/pages/common/ 폴더 내부 컴포넌트들의 공통 스타일 */
+
+/* Topbar */
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.topbar-category {
+  font-weight: 500;
+  cursor: pointer;
+  color: #555;
+}
+
+.topbar-actions button {
+  background-color: transparent;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+}
+
+.topbar-actions button:hover {
+  color: #868e96;
+}
+
+/* SearchBar */
+.searchbar-container {
+  padding: 15px 20px 0px 20px; /* 하단 패딩을 0으로 설정 */
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.searchbar-location {
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.searchbar-location svg {
+  margin-left: 5px;
+  width: 12px;
+  height: 12px;
+}
+
+.searchbar-input-wrapper {
+  flex-grow: 1;
+  position: relative;
+}
+
+.searchbar-input {
+  width: 1370px;
+  height: 50px;
+  border: 2px solid #B57EDC;
+  border-radius: 24px;
+  padding-left: 15px;
+  padding-right: 40px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.searchbar-input::placeholder {
+  font-size: 18px;
+  margin-left: 20px;
+  color: #adb5bd;
+}
+
+
+.searchbar-button {
+  width: 150px;
+  height: 50px;
+  padding: 10px 0px;
+  padding-left: 20px;
+  border: 1px solid #F5F3F3;
+  border-radius: 24px;
+  background-color: #F5F3F3;
+  color: #555;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchbar-button:hover {
+  background-color: #e9ecef;
+}
+
+.searchbar-dropdown {
+  position: relative; /* 자식 요소의 절대 위치 기준 */
+  display: inline-block;
+  cursor: pointer;
+  /* 필요한 경우 너비, 패딩 등 설정 */
+  border: 1px solid #ccc; /* 테두리 */
+  border-radius: 24px; /* 둥근 모서리 */
+  margin-right: 50px;
+}
+
+.selected-trade-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 텍스트, 점, 아이콘 배치 */
+  padding: 8px 12px; /* 내부 여백 */
+  /* text-20px에 해당하는 폰트 스타일 */
+}
+
+.searchbar-button-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 8px; /* 텍스트와의 간격 */
+  margin-right: auto; /* 점을 텍스트 가까이, 아이콘에서 멀리 */
+  flex-shrink: 0; /* 점이 줄어들지 않도록 */
+}
+
+.selected-trade-type svg {
+  margin-left: 8px; /* 아이콘과의 간격 */
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 110%; /* 부모 요소 바로 아래에 위치 */
+  left: 0;
+  right: 0;
+  width: 150px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  z-index: 100; /* 다른 요소 위에 표시 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.option-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.option-item:hover {
+  background-color: #f0f0f0;
+}
+.dropdown-options .option-item:first-child:hover {
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+.dropdown-options .option-item:last-child:hover {
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.popular-keywords {
+  padding: 0px 20px;
+  color: #868e96;
+  background-color: #fff;
+  text-align: left;
+  margin-left: 250px;
+  margin-top: 1rem;
+}
+
+.popular-keywords span {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.popular-keywords span:hover {
+  text-decoration: underline;
+}
+
+
+/* FilterSidebar */
+
+.all-product-container {
+    display: flex;
+    flex-direction: row;
+}
+.filter-sidebar-container {
+  width: 15px;
+  padding: 25px 20px; /* 상하 패딩 늘림 */
+  min-width: 274px;
+  background-color: #fff; /* 배경색 흰색으로 */
+}
+
+.filter-section {
+  margin-bottom: 30px; /* 섹션 간 간격 늘림 */
+  padding-bottom: 20px; /* 섹션 하단에 구분선 효과를 위한 패딩 */
+  border-bottom: 1px solid #f5f5f5; /* 섹션 구분선 */
+}
+.filter-section:last-child {
+  border-bottom: none; /* 마지막 섹션에는 구분선 제거 */
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filter-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.filter-title { /* 대분류 타이틀*/
+  text-align: left;
+  font-weight: 700; /* Bold */
+  color: #222;
+}
+
+.filter-reset-button {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 0;
+}
+.filter-reset-button:hover {
+  text-decoration: underline;
+}
+
+.filter-checkbox-label { /* 거래 가능만 보기*/
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  color: #333;
+  cursor: pointer;
+}
+
+.filter-checkbox { /* 거래 가능만 보기*/
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  accent-color: #8A2BE2;
+}
+
+.filter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-list-item {
+  display: flex; /* 라디오 버튼과 레이블을 한 줄에 정렬 */
+  align-items: center;
+  margin-bottom: 12px;
+}
+.filter-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.filter-radio { /* 라디오 버튼 */
+  width: 18px; /* 라디오 버튼 크기  */
+  height: 18px;
+  margin-right: 8px;
+  accent-color: #8A2BE2; /* 선택 시 보라색 */
+  cursor: pointer;
+}
+
+.filter-label { /* 소분류 레이블*/
+  color: #333;
+  cursor: pointer;
+}
+
+.filter-more-button {
+  background: none;
+  border: none;
+  color: #6f42c1;
+  cursor: pointer;
+  padding: 5px 0;
+  margin-top: 5px;
+}
+.filter-more-button:hover {
+  text-decoration: underline;
+}
+
+/* 가격 입력 부분*/
+.price-input-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* 요소 간 간격 */
+  margin-top: 15px;
+}
+
+.price-input {
+  width: 70px;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: right;
+}
+.price-input::placeholder {
+  color: #aaa;
+  text-align: center; /* 플레이스홀더만 중앙 정렬 */
+}
+
+.price-input-separator {
+  color: #555;
+}
+
+.price-apply-button {
+  padding: 8px 12px;
+  background-color: #6f42c1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.price-apply-button:hover {
+  background-color: #5a37a0;
+}
+
+/* RecentViewed */
+.recent-viewed-container {
+  width: 310px;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 5rem;
+}
+
+.recent-viewed-box{
+  width: 160px;
+  height: 630px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #f8f9fa;
+  justify-items: center;
+  position: fixed;   /* 요소를 스크롤에 따라 고정 */
+
+}
+
+.recent-viewed-title {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.recent-item-placeholder {
+  width: 120px;
+  height: 120px;
+  background-color: #E0E0E0;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+
+.recent-viewed-more-button {
+  color: #868e96;
+  margin-top: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.recent-viewed-more-button:hover {
+  text-decoration: underline;
+}
+
+/* 로그인 후 헤더 css*/
+.loginHeader {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  font-size: 1rem;
+}
+
+.home {
+  width: 30%;
+  display: block;
+  justify-content: flex-start;
+}
+
+/* Header.jsx에서 사용할 카테고리 드롭다운 관련 스타일 */
+
+/* 로고 버튼 스타일 (이전 대화에서 조정한 것) */
+/* 이 부분은 Header.jsx 코드 내의 style 객체 대신 common.css 에 옮겨서 사용하세요 */
+.logoButton {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block; /* flex 보다는 inline-block이 버튼 크기 고정에 더 안정적일 수 있습니다. */
+
+  /* 이미지 경로: public 폴더에 있다면 보통 이렇게 접근 */
+  background-image: url("/image/딜온로고.png"); /* 여러분의 실제 경로에 맞게 수정 */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: 120px; /* 로고 이미지 크기에 맞춰 조절 */
+  height: 60px; /* 로고 이미지 크기에 맞춰 조절 */
+  /* 로고 버튼 내부에 텍스트가 없고 이미지로만 표현할 경우 */
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+
+
+/* 헤더의 전체적인 레이아웃을 위한 기본 설정 (필요시) */
+.signIn {
+  display: flex; /* 자식 요소들을 가로로 나열 */
+  justify-content: space-between; /* 양쪽 끝으로 요소들을 벌림 */
+  align-items: center; /* 세로 중앙 정렬 */
+  padding: 10px 20px; /* 상하좌우 패딩 */
+
+}
+
+.left-header-section {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 로고와 카테고리 사이 간격 */
+}
+
+
+/* 카테고리 드롭다운을 감싸는 컨테이너 */
+.category-container {
+  position: relative; /* 드롭다운 메뉴를 이 요소를 기준으로 위치시킵니다. */
+  display: inline-block; /* 텍스트 크기에 맞춰 넓이 조절되도록 */
+  cursor: pointer; /* 마우스 오버 시 포인터 변경 */
+  padding: 10px; /* 마우스 이벤트 영역 확보 및 시각적 패딩 */
+  font-size: 16px;
+  color: #333;
+}
+
+.category-text {
+  /* 드롭다운의 텍스트 자체 스타일 (필요시) */
+  font-weight: bold;
+}
+
+/* 드롭다운 메뉴 자체 스타일 */
+.category-dropdown {
+  position: absolute; /* .category-container를 기준으로 위치 */
+  top: 100%; /* .category-container의 바로 아래에 위치 */
+  left: 50%; /* .category-container의 중앙에 오도록 (transform과 함께 사용) */
+  transform: translateX(-50%); /* 정확히 중앙 정렬 */
+  width: 150px; /* 드롭다운 메뉴의 너비 지정 */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* 다른 요소 위에 표시되도록 z-index 설정 */
+  white-space: nowrap; /* 드롭다운 항목 텍스트 줄바꿈 방지 */
+}
+
+/* 드롭다운 항목 스타일 */
+.dropdown-item {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  text-align: center; /* 항목 텍스트 중앙 정렬 */
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0; /* 호버 시 배경색 변경 */
+  color: #000;
+}

@@ -1,0 +1,124 @@
+.home-page-container {
+    /* 전체 페이지 컨테이너 스타일 (필요하다면) */
+}
+
+.home-content-layout {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+.home-main-content {
+    flex-grow: 1; /* 남은 공간 모두 차지 width 정하면 가로길이 우선적용*/
+    width: 1150px;
+    flex-shrink: 0; /* 너비가 줄어들지 않도록 설정 */
+}
+
+.product-section {
+    margin-bottom: 40px;
+}
+
+.product-type {
+    top: 10px;          /* 위에서 10px 떨어짐 */
+    right: 10px;        /* 오른쪽에서 10px 떨어짐 */
+    background-color: rgba(0, 0, 0, 0.7); /* 더 불투명하게 */
+    color: white;       /* 흰색 글자 */
+    padding: 4px 12px;   /* 패딩 */
+    border-radius: 4px; /* 둥근 모서리 */
+    font-size: 12px;    /* 작은 글자 크기 */
+    font-weight: bold;  /* 글자 굵게 */
+    z-index: 10;        /* 다른 요소 위에 표시되도록 z-index 설정 */
+    margin-left: 13rem;
+    margin-bottom: 15rem;
+    opacity: 0.7    ;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left;
+}
+
+.product-list {
+    display: flex;
+    gap: 16px; /* 간격 */
+    justify-content: space-between; /* 5개 항목을 동일 간격으로 분배 시 사용 */
+    flex-wrap: wrap; 
+    margin-bottom: 20px; /* 목록 아래 간격 */
+    justify-content: flex-start
+}
+
+.product-item {
+    width: 280px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    text-align: left;
+}
+
+.product-item .product-image-placeholder { /*.product-item 이거 안넣으면 상품페이지 css랑 겹치는데 이름이 같긴한데 왜겹치지 안불러왔는데*/
+    width: 290px;
+    height: 290px;
+    background-color: #eee; /* 회색 박스 색상 */
+    /* display: flex; */ /* 내부 텍스트 중앙 정렬 시 사용 */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* color: #888; */
+}
+
+.product-details {
+    padding: 10px; /* 상세 정보 내부 패딩 */
+}
+
+.product-title {
+    margin-bottom: 4px;
+    color: #333;
+    white-space: nowrap; /* 제목이 길면 줄바꿈 안 함 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
+    text-overflow: ellipsis; /* 넘치는 부분 ... 처리 */
+}
+
+.product-price {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.product-meta {
+    color: #888;
+    /* display: flex; */
+    justify-content: space-between; /* 위치/시간/찜 정보 일단 대충 넣음 (아이콘 넣기 귀찮아서 ㅎㅎ;;) */
+    align-items: center;
+}
+
+.meta-likes {
+    display: flex;
+    align-items: center;
+    /* 찜 아이콘 스타일은 추가 필요 */
+}
+
+
+.more-button {
+    display: block;
+    width: 100px;
+    height: 37px;
+    border: 1px solid #D1BDF5;
+    border-radius: 24px;
+    background-color: #fff;
+    color: #673AB7;
+    cursor: pointer;
+    transition: background-color, color 0.3s ease;
+}
+
+.more-button:hover {
+    background-color: #673AB7;
+    color: #fff;
+}
+
+.list-main-content {
+     flex-grow: 1; /* 남은 공간 모두 차지 width 정하면 가로길이 우선적용*/
+     width: 1150px;
+     flex-shrink: 0; /* 너비가 줄어들지 않도록 설정 */
+ }
