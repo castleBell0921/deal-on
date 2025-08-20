@@ -1,0 +1,46 @@
+
+name: CI - Build and Lint
+
+# 조건문 설정
+on:
+  push:
+    branches: [ dev, main ]
+  pull_request:
+    branches: [ dev, main ]
+
+jobs:
+  # jobs 이름이 build
+  build:
+    # 구동할 mv 설정
+    runs-on: ubuntu-latest
+
+    # run 구문에서 사용할 터미널 기본값 설정
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      # 스텝 1 깃허브 레포지토리 불러오기
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      # 스텝 2 노드설치
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          
+      # 스텝 3 클라이언트 설치 및 빌드테스트
+      - name: Install & Build client
+        working-directory: ./client
+        run: |
+          npm install
+          npm run build
+      # 스텝 4 서버 의존성 추가
+      - name: Install server dependencies
+        working-directory: ./server
+        run: npm install
+      # 스텝 5 서버 파일의 맞춤법 검사
+      - name: Check server syntax
+        working-directory: ./server
+        run: node --check server.js
