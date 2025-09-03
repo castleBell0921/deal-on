@@ -457,3 +457,87 @@
   background-color: #f0f0f0; /* 호버 시 배경색 변경 */
   color: #000;
 }
+
+/* 판매하기 모달 */
+
+/* 모달 오버레이 (어두운 배경) */
+.sell-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 모달 컨텐츠 */
+.sell-modal-content {
+  width: 560px;
+  height: 200px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 컨텐츠 왼쪽 정렬 */
+  justify-content: space-between; /* 컨텐츠 수직 간격 배분 */
+  outline: none;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 닫기 버튼 */
+.sell-modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  color: #aaa;
+  padding: 0;
+}
+.sell-modal-close-btn:hover {
+  color: #333;
+}
+
+
+.sell-modal-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.sell-modal-buttons {
+  display: flex;
+  gap: 20px; /* 버튼 사이 간격 */
+  width: 100%;
+  justify-content: center; /* 버튼들을 중앙에 배치 */
+}
+
+.sell-option-button {
+  width: 245px;
+  height: 90px;
+  border-radius: 23px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #f2f2f2; /* 기본 테두리 색상 */
+  transition: all 0.2s ease-in-out;
+
+  /* 기본 스타일 (회색 배경) */
+  background-color: #f2f2f2;
+  color: #555;
+}
+
+/* 호버 시 스타일 */
+.sell-option-button:hover {
+  background-color: #F4F0FF; /* 연보라 배경 */
+  border-color: #B57EDC; /* 보라색 테두리 */
+  color: #673AB7; /* 보라색 텍스트 */
+}
