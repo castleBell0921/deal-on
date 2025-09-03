@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import LoginModal from '../user/login/LoginModalContainer';
+import SellOptionsModal from './SellOptionsModal';
 import '../../styles/common.css'; // 스타일 시트 임포트 (여기에 드롭다운 CSS도 추가할 것)
 
 const Header = ({onCategorySelect }) => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isSellModalOpen, setIsSellModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isTooltipVisible, setTooltipVisible] = useState(false); // 이 변수는 드롭다운과는 무관하니, 툴팁에 쓰실 게 아니라면 삭제 고려
   const [ category, setCategory ] = useState('카테고리');
@@ -128,6 +130,13 @@ const Header = ({onCategorySelect }) => {
   const closeLoginModal = () => {
     setIsLoginModalOpen(false);
   };
+  const openSellModal = () => {
+        setIsSellModalOpen(true);
+  };
+
+  const closeSellModal = () => {
+        setIsSellModalOpen(false);
+  };
 
   return (
     // 전체 헤더를 감싸는 div (필요에 따라 semantic tag로 변경 가능: <header>)
@@ -162,7 +171,7 @@ const Header = ({onCategorySelect }) => {
         {isLoggedIn ? (
           <div className="loginHeader">
             <p>채팅하기</p>
-            <p>판매하기</p>
+            <p onClick={openSellModal} style={{cursor: 'pointer'}}>판매하기</p>
             <p onClick={handleMyPage}>마이페이지</p>
             <p onClick={handleLogout}>로그아웃</p>
           </div>
@@ -178,6 +187,10 @@ const Header = ({onCategorySelect }) => {
         onLoginSuccess={handleLoginSuccess}
         isLoggedIn={isLoggedIn}
         checkLoginStatus={checkLoginStatus}
+      />
+      \<SellOptionsModal
+        isOpen={isSellModalOpen}
+        onRequestClose={closeSellModal}
       />
     </div>
   );
